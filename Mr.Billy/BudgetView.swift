@@ -12,6 +12,7 @@ struct BudgetView: View {
         NavigationView{
             VStack{
                 Text("")
+                graph.circle
             }
             .navigationTitle("Budget")
         }

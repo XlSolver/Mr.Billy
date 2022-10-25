@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D80124B29086BC800B7C079 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80124A29086BC800B7C079 /* Data.swift */; };
 		9DAE17A32907FBD700591091 /* Mr_BillyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE17A22907FBD700591091 /* Mr_BillyApp.swift */; };
 		9DAE17A52907FBD700591091 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE17A42907FBD700591091 /* ContentView.swift */; };
 		9DAE17A72907FBDA00591091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE17A62907FBDA00591091 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D80124A29086BC800B7C079 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9DAE179F2907FBD700591091 /* Mr.Billy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mr.Billy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAE17A22907FBD700591091 /* Mr_BillyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mr_BillyApp.swift; sourceTree = "<group>"; };
 		9DAE17A42907FBD700591091 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				9DAE17B42907FC8500591091 /* SpendingView.swift */,
 				9DAE17B02907FC6C00591091 /* TravelView.swift */,
 				9DAE17B62907FC8D00591091 /* HistoryView.swift */,
+				9D80124A29086BC800B7C079 /* Data.swift */,
 				9DAE17A62907FBDA00591091 /* Assets.xcassets */,
 				9DAE17A82907FBDA00591091 /* Preview Content */,
 			);
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D80124B29086BC800B7C079 /* Data.swift in Sources */,
 				9DAE17B52907FC8500591091 /* SpendingView.swift in Sources */,
 				9DAE17B72907FC8D00591091 /* HistoryView.swift in Sources */,
 				9DAE17A52907FBD700591091 /* ContentView.swift in Sources */,

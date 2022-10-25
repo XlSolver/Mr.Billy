@@ -11,6 +11,8 @@ struct SpendingView: View {
     var body: some View {
         NavigationView{
             VStack{
+                
+
                 Text("")
             }
             .navigationTitle("Spending")
