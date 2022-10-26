@@ -12,7 +12,6 @@ struct SpendingView: View {
         NavigationView{
             VStack{
                 
-
                 Text("")
             }
             .navigationTitle("Spending")
