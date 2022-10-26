@@ -13,15 +13,16 @@ struct CircleChart: Identifiable
 {
     var circle: BasicChartSymbolShape = .circle
     var budget: Float = 5000.00
-    var moneySpent: Float = 100.75
+    var moneySpent: Float = 431.75
     var id = UUID()
 }
 var data = [10.30, 55.30, 13.75, 30.05]
 var x = CircleChart()
 var remBudget: Float  = x.budget-x.moneySpent//remaining budget
 var remBudgetString = String(remBudget)
-var remBudgetPercentage = (remBudget*100)/x.budget
+var remBudgetPercentage = Int((remBudget*100)/x.budget)
 var remBudgetPercentageString = String(Int32(remBudgetPercentage))
+var chartDegrees = Double(remBudgetPercentage*360)/100
 var graph: CircleChart
 {
     //datas comes from a local database, this is just an example
@@ -33,7 +34,7 @@ struct MyShape : Shape {
     func path(in rect: CGRect) -> Path {
         var p = Path()
 
-        p.addArc(center: CGPoint(x: 200, y:200), radius: 130, startAngle: .degrees(270), endAngle: .degrees(30), clockwise: false)
+        p.addArc(center: CGPoint(x: 200, y:200), radius: 130, startAngle: .degrees(270.00), endAngle: .degrees((270.00 + chartDegrees).truncatingRemainder(dividingBy: 360)), clockwise: false)
 
         return p.strokedPath(.init(lineWidth: 10))
     }

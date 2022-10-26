@@ -13,23 +13,23 @@ struct ContentView: View {
         TabView{
             BudgetView()
                 .tabItem() {
-            Label("Budget", systemImage: "creditcard.circle.fill")
-            }
+                    Label("Budget", systemImage: "creditcard.circle.fill")
+                }
             
             SpendingView()
                 .tabItem() {
-            Label("Spending", systemImage: "dollarsign.circle.fill")
-            }
+                    Label("Spending", systemImage: "dollarsign.circle.fill")
+                }
             
             TravelView()
                 .tabItem() {
-            Label("My Travel", systemImage: "airplane.circle.fill")
-            }
+                    Label("My Travel", systemImage: "airplane.circle.fill")
+                }
             
             HistoryView()
                 .tabItem() {
-            Label("History", systemImage: "list.bullet.circle.fill")
-            }
+                    Label("History", systemImage: "list.bullet.circle.fill")
+                }
         }
     }
 }
