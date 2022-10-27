@@ -18,6 +18,7 @@ struct CircleChart: Identifiable
 }
 var data = [10.30, 55.30, 13.75, 30.05]
 var x = CircleChart()
+var totalbudget = String(x.budget)
 var remBudget: Float  = x.budget-x.moneySpent//remaining budget
 var remBudgetString = String(remBudget)
 var remBudgetPercentage = Int((remBudget*100)/x.budget)
