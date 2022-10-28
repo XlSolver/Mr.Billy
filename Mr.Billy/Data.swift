@@ -9,6 +9,9 @@ import SwiftUI
 import Charts
 //Display a circle chart that represent the remaining budget in the "budget" view
 
+
+
+
 struct CircleChart: Identifiable
 {
     var circle: BasicChartSymbolShape = .circle
@@ -40,3 +43,27 @@ struct MyShape : Shape {
         return p.strokedPath(.init(lineWidth: 10))
     }
 }
+
+struct Spending: Identifiable
+{
+    var id = UUID()
+    var location: String
+    var value: Float
+    var date: Date
+    var category: String
+    
+}
+
+class SpendingData: ObservableObject {
+    var newspendings =
+    [
+        Spending(location: "Description", value: 00.00, date: Date() , category: "Category")
+    ]
+    
+    
+    func add(new: Spending ) {
+        newspendings.append(new)
+    }
+}
+
+var spendingData = SpendingData()

@@ -10,13 +10,15 @@ import SwiftUI
 struct SpendingView: View {
     @State var location = ""
     @State var value = ""
-    @State var date = Date()
-
+    @State private var birthDate = Date()
+    
+    @ObservedObject var myData = spendingData
+    
     @State private var categoryindex = 0
     var categorySelection = ["Food", "Ticket","Extra"]
     var body: some View {
         NavigationView{
-            Form {
+           Form {
                 Section(header: Text("Location").bold()) {
                     TextField("enter the location",text: $location)
                     //TextField(.constant(""), text: $location, placeholder: Text("Enter the location"))
@@ -30,11 +32,16 @@ struct SpendingView: View {
                         .keyboardType(.decimalPad)
                 }
                 //Section(header: Text("Date")){
-                DatePicker(
-                    "Date",
-                    selection: $date,
-                    displayedComponents: [.date]
-                )
+//                DatePicker(
+//                    "Date",
+//                    selection: $date,
+//                    displayedComponents: [.date]
+                DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
+                                Text("Select a date")
+                            }
+
+                            Text("Date is \(birthDate.formatted(date: .long, time: .omitted))")
+                
                 //.datePickerStyle(.graphical)
                 //}
                 Section() {
@@ -45,17 +52,18 @@ struct SpendingView: View {
                     }
                 }
                 Section {
-                    Button(action: {
+                    Button (action: {
                         print("added successfully")
-                        //myData.add(newspending: Spending))
-                    }){
+                        myData.add(new: Spending(location: location, value: Float(value)!, date: birthDate, category: categorySelection[categoryindex]))
+                    })
+                    {
                         Image(systemName: "doc.fill.badge.plus")
                         Text("Add")
                             .padding(.horizontal,140)
                     }
                 }
             }
-                
+            
             .navigationTitle("Spending")
         }
     }
