@@ -9,32 +9,33 @@ import SwiftUI
 import Charts
 
 struct ContentView: View {
+    
+    
+   
+    
+
     var body: some View {
         TabView{
             BudgetView()
                 .tabItem() {
-                    Label("Budget", systemImage: "creditcard.circle.fill")
+                    Label("Budget", systemImage: "creditcard.fill")
                 }
             
-            SpendingView()
-                .tabItem() {
-                    Label("Spending", systemImage: "dollarsign.circle.fill")
-                }
+        
             
             TravelView()
                 .tabItem() {
-                    Label("My Travel", systemImage: "airplane.circle.fill")
-                }
-            
-            HistoryView()
-                .tabItem() {
-                    Label("History", systemImage: "list.bullet.circle.fill")
+                    Label("My Travel", systemImage: "airplane")
                 }
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
+    @Binding var budget: Float
+    @Binding var spese: Float
+    
     static var previews: some View {
         ContentView()
     }

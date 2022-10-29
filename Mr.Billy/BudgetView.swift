@@ -6,53 +6,59 @@
 //
 
 import SwiftUI
-import Charts
+
+//100
+//
+//50
+//
+//differenza = 100 - 50 = 50 -> 50%
+
+
 
 struct BudgetView: View {
+    
+    @State var budget : Float = 100
+    @State var spesa : Float = 0
+    
     var body: some View {
         NavigationView{
-            ZStack{
-//                graph.circle //
-//                    .frame(width: 320, height: 320)
-//                    .position(x:196.5,y:200)
-//                    .foregroundColor(.accentColor)
-//                    .shadow(radius: 7)
-//                graph.circle //inner circle
-//                    .frame(width: 280, height: 280)
-//                    .position(x:196.5,y:200)
-//                    .foregroundColor(.white)
-//                    .shadow(radius: 7)
-                MyShape()
-                    .foregroundColor(.accentColor)
-
-                Text(remBudgetPercentageString+"%")
-                    .bold()
-                    .padding(.bottom,250)
-                    .navigationTitle("Budget")
-                    .font(.title)
-                ZStack() {
-                        Text("Total Spent")
-                            .bold()
-                            .padding(.top,200)
-                            //.position(x:200,y:435)
-                        Text("£"+remBudgetString + " of £" + totalbudget)
-                            .bold()
-                            .padding(.top,270)
-                            //.position(x:200,y:465)
-                    Rectangle()
-                        .opacity(0.2)
-                        .foregroundColor(.black)
-                        .frame(width: 300, height: 100)
-                        .padding(.top,250)
-                        //.position(x:200,y:455)
+            VStack(spacing: 25){
+                ZStack{
+                    Circle()
+                        .stroke(Color.gray.opacity(0.3),lineWidth: 20)
+                        .frame(width: 300, height: 300)
+                    Circle()
+                        .trim(from: 0, to: CGFloat((budget - spesa)/100))
+                        .stroke(Color.pink, style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
+                        .frame(width: 300, height: 300)
+                        .animation(.default, value: (budget-spesa))
+                    
+                }
+                .padding(.bottom, 30)
+                VStack(spacing: 12){
+                    Text("Total Spent")
+                    Text("€\(spesa, specifier: "%.2f") of \(budget, specifier: "%.2f")")
+                }.frame(width: 300, height: 80)
+                
+                    .background(Color.gray)
+                    .cornerRadius(15)
+                    .foregroundColor(.white)
+//                List {
+//                    ForEach()
+//                }
+            }.navigationTitle("Budget")
+                .toolbar {
+                    ToolbarItem {
+                        Button {
+                            spesa += 5
+                            print("aggiunta spesa rapida")
+                        } label: {
+                            Image(systemName: "doc.badge.plus")
+                        }
                     }
-            }
+                }
         }
-    }
-    
-    struct BudgetView_Previews: PreviewProvider {
-        static var previews: some View {
-            BudgetView()
-        }
+        
     }
 }
+
