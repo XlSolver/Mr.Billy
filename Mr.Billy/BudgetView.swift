@@ -16,7 +16,8 @@ import SwiftUI
 
 
 struct BudgetView: View {
-    
+    @StateObject var myData = expensesStore()
+    @State private var showingSheet = false
     @State var budget : Float = 100
     @State var spesa : Float = 0
     
@@ -35,17 +36,43 @@ struct BudgetView: View {
                     
                 }
                 .padding(.bottom, 30)
+                
+                
+                
+                
+                
                 VStack(spacing: 12){
                     Text("Total Spent")
                     Text("€\(spesa, specifier: "%.2f") of \(budget, specifier: "%.2f")")
+                   
                 }.frame(width: 300, height: 80)
-                
                     .background(Color.gray)
                     .cornerRadius(15)
                     .foregroundColor(.white)
-//                List {
-//                    ForEach()
-//                }
+                    .onTapGesture {
+                        let impactLight = UIImpactFeedbackGenerator(style: .light)
+                        impactLight.impactOccurred()
+                    }
+                    .sheet(isPresented: $showingSheet)
+                {
+                    editBudgetViewModal()
+                        .presentationDetents([.medium])
+                }
+                
+                
+                
+                ScrollView{
+                    ForEach(myData.expenses) {row in
+                        VStack{
+                            HStack(spacing: 10){
+                                Text("\(row.place)")
+                                Spacer()
+                                Text("-"+"\(row.howMuch)"+"€")
+                            }.padding()
+                            Divider()
+                        }
+                    }
+                }
             }.navigationTitle("Budget")
                 .toolbar {
                     ToolbarItem {

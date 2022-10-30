@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HistoryView: View {
+    var expenses: Expenses
     var body: some View {
         NavigationView{
             VStack{
@@ -18,8 +19,8 @@ struct HistoryView: View {
     }
 }
 
-struct HistoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        HistoryView()
-    }
-}
+//struct HistoryView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HistoryView(expenses)
+//    }
+//}

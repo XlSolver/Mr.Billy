@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D686696290D42C10084ABBD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D686695290D42C10084ABBD /* Model.swift */; };
+		9D686698290D5AE90084ABBD /* editBudgetViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D686697290D5AE90084ABBD /* editBudgetViewModal.swift */; };
 		9D80124B29086BC800B7C079 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80124A29086BC800B7C079 /* Data.swift */; };
 		9DAE17A32907FBD700591091 /* Mr_BillyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE17A22907FBD700591091 /* Mr_BillyApp.swift */; };
 		9DAE17A52907FBD700591091 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE17A42907FBD700591091 /* ContentView.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D686695290D42C10084ABBD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		9D686697290D5AE90084ABBD /* editBudgetViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editBudgetViewModal.swift; sourceTree = "<group>"; };
 		9D80124A29086BC800B7C079 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9DAE179F2907FBD700591091 /* Mr.Billy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mr.Billy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAE17A22907FBD700591091 /* Mr_BillyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mr_BillyApp.swift; sourceTree = "<group>"; };
@@ -64,10 +68,12 @@
 				9DAE17A22907FBD700591091 /* Mr_BillyApp.swift */,
 				9DAE17A42907FBD700591091 /* ContentView.swift */,
 				9DAE17B22907FC7900591091 /* BudgetView.swift */,
+				9D686697290D5AE90084ABBD /* editBudgetViewModal.swift */,
 				9DAE17B42907FC8500591091 /* SpendingView.swift */,
 				9DAE17B02907FC6C00591091 /* TravelView.swift */,
 				9DAE17B62907FC8D00591091 /* HistoryView.swift */,
 				9D80124A29086BC800B7C079 /* Data.swift */,
+				9D686695290D42C10084ABBD /* Model.swift */,
 				9DAE17A62907FBDA00591091 /* Assets.xcassets */,
 				9DAE17A82907FBDA00591091 /* Preview Content */,
 			);
@@ -159,6 +165,8 @@
 				9DAE17B32907FC7900591091 /* BudgetView.swift in Sources */,
 				9DAE17B12907FC6C00591091 /* TravelView.swift in Sources */,
 				9DAE17A32907FBD700591091 /* Mr_BillyApp.swift in Sources */,
+				9D686696290D42C10084ABBD /* Model.swift in Sources */,
+				9D686698290D5AE90084ABBD /* editBudgetViewModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
