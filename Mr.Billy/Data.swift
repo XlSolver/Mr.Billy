@@ -31,8 +31,34 @@ class SpendingData: ObservableObject {
 
 var spendingData = SpendingData()
 
+//Modifiche Ciro
+
+struct Travel : Identifiable {
+  
+    var id = UUID ()
+    var travelName: String
+    var datesArr: Date             //datapicker
+    var datesDep: Date
+    var imageName: String      //foto da decidere come in che modo i dont know
+        
+}
 
 
+
+
+class SharedData: ObservableObject {
+    @Published   var travels = [
+        Travel(travelName: "Outcave", datesArr: Date.now, datesDep: Date.now, imageName: "outcave"),
+        Travel(travelName: "Paris", datesArr: Date.now, datesDep: Date.now, imageName: "parismrbilly"),
+        Travel(travelName: "Madrid", datesArr: Date.now,datesDep: Date.now, imageName: "madridmrbilly"),
+        Travel(travelName: "London", datesArr: Date.now, datesDep: Date.now, imageName: " londonmrbilly")
+        
+        
+    ]
+    
+    
+}
+var sharedData = SharedData()
 
 
 
