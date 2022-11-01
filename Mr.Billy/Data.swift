@@ -11,22 +11,31 @@ struct Spending: Identifiable
 {
     var id = UUID()
     var location: String
-    var value: Float
+    var value: String
     var date: Date
     var category: String
+    
+//    init(id: UUID = UUID(), location: String, value: Float, date: Date, category: String) {
+//        self.id = id
+//        self.location = location
+//        self.value = value
+//        self.date = date
+//        self.category = category
+//    }
     
 }
 
 class SpendingData: ObservableObject {
     var newspendings =
     [
-        Spending(location: "Description", value: 00.00, date: Date() , category: "Category")
+        Spending(location: "Location",value: "Value",date: Date(),category: "Category"),
+        Spending(location: "Napoli", value: "22", date: Date(), category: "Food")
     ]
     
     
-    func add(new: Spending ) {
-        newspendings.append(new)
-    }
+//    func add(new: Spending ) {
+//        newspendings.append(new)
+//    }
 }
 
 var spendingData = SpendingData()

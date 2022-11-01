@@ -21,6 +21,8 @@ struct BudgetView: View {
     @State var budget : Float = 100
     @State var spesa : Float = 0
     
+    @State var newspendingviewispresented = false
+    
     var body: some View {
         NavigationView{
             VStack(spacing: 25){
@@ -74,13 +76,23 @@ struct BudgetView: View {
                     }
                 }
             }.navigationTitle("Budget")
+             .sheet(isPresented: $newspendingviewispresented) {
+                    SpendingView()
+                }
                 .toolbar {
                     ToolbarItem {
-                        Button {
-                            spesa += 5
-                            print("aggiunta spesa rapida")
-                        } label: {
-                            Image(systemName: "doc.badge.plus")
+                        HStack {
+                            Button {
+                                spesa += 5
+                                print("aggiunta spesa rapida")
+                            } label: {
+                                Image(systemName: "doc.badge.plus")
+                            }
+                            Button {
+                                newspendingviewispresented.toggle()
+                            } label: {
+                                Image(systemName: "plus")
+                            }
                         }
                     }
                 }

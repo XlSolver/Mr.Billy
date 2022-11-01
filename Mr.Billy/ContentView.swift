@@ -10,22 +10,20 @@ import Charts
 
 struct ContentView: View {
     
-    
-   
-    
-
     var body: some View {
         TabView{
             BudgetView()
                 .tabItem() {
                     Label("Budget", systemImage: "creditcard.fill")
                 }
-            
-        
-            
+
             TravelView()
                 .tabItem() {
                     Label("My Travel", systemImage: "airplane")
+                }
+            HistoryView()
+                .tabItem() {
+                    Label("History", systemImage: "list.bullet.circle.fill")
                 }
         }
     }
