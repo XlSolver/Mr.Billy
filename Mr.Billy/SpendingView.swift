@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SpendingView: View {
     
+    @Environment(\.presentationMode) var presentationMode
 //    @State var image: Image? = nil
 //    @State var showCaptureImageView: Bool = false
     
@@ -95,6 +96,7 @@ struct SpendingView: View {
                 ToolbarItem {
                     Button {
                         addnewspending(location:location,value:value,date:date,category:categorySelection[categoryindex])
+                        presentationMode.wrappedValue.dismiss()
                     }
                 label: {
                     Text("Add")

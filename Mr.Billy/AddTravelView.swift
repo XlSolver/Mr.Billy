@@ -7,15 +7,14 @@
 import SwiftUI
 
 struct AddTravel: View {
-    
-    @Environment(\.presentationMode) var presentationMode
-    
     @ObservedObject var myData = sharedData
     
     @State var nameTravel: String = ""
     @State var dates1 = Date()
     @State var dates2 = Date()
-    //  @State var imagename: String
+    @State var address: String = ""
+    @State var budget: String = ""
+//    @State var imagename: String
     
     var body: some View {
         NavigationStack {
@@ -23,6 +22,15 @@ struct AddTravel: View {
                 Section(header: Text("Your destination")) {
                     TextField("your destination is..", text: $nameTravel)
                 }
+                Section(header: Text("Your budget")) {
+                    TextField("your budget is..", text: $budget)
+                }
+                Section(header: Text("Your address")) {
+                    TextField("your address is..", text: $address)
+                }
+                
+                
+                
                 DatePicker(selection: $dates1, in: ...Date(), displayedComponents: .date) {
                     Text("Select arrival ")
                 }
@@ -45,7 +53,6 @@ struct AddTravel: View {
                         // print(myData.travels.count)
                         addTravel(nameTravel: nameTravel, dates: dates1)
                         // print(myData.travels.count)
-                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Add")
                     }
@@ -62,7 +69,7 @@ struct AddTravel: View {
     }
     
     private func addTravel(nameTravel: String, dates: Date) {
-        let newTravel = Travel(travelName: nameTravel, datesArr: dates1, datesDep: dates2, imageName: "")
+        let newTravel = Travel(travelName: nameTravel, datesArr: dates1, datesDep: dates2, address: address, budget: budget, imageName: "")
         myData.travels.append(newTravel)
 //
 //        struct AddTravel_Previews: PreviewProvider {
