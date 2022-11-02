@@ -72,7 +72,6 @@
 		9DAE17A12907FBD700591091 /* Mr.Billy */ = {
 			isa = PBXGroup;
 			children = (
-				9D643E912912D325008B1A33 /* Mr-Billy-Info.plist */,
 				9DAE17A22907FBD700591091 /* Mr_BillyApp.swift */,
 				9DAE17A42907FBD700591091 /* ContentView.swift */,
 				9DAE17B22907FC7900591091 /* BudgetView.swift */,
@@ -86,6 +85,7 @@
 				9D80124A29086BC800B7C079 /* Data.swift */,
 				9D686695290D42C10084ABBD /* Model.swift */,
 				9DAE17A62907FBDA00591091 /* Assets.xcassets */,
+				9D643E912912D325008B1A33 /* Mr-Billy-Info.plist */,
 				9DAE17A82907FBDA00591091 /* Preview Content */,
 			);
 			path = Mr.Billy;
