@@ -7,6 +7,9 @@
 import SwiftUI
 
 struct AddTravel: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     @ObservedObject var myData = sharedData
     
     @State var nameTravel: String = ""
@@ -24,7 +27,7 @@ struct AddTravel: View {
                     Text("Select arrival ")
                 }
                 
-                DatePicker(selection: $dates2, in: ...Date(), displayedComponents: .date) {
+                DatePicker(selection: $dates2, in: Date()..., displayedComponents: .date) {
                     Text("Select departure ")
                 }
                 
@@ -42,6 +45,7 @@ struct AddTravel: View {
                         // print(myData.travels.count)
                         addTravel(nameTravel: nameTravel, dates: dates1)
                         // print(myData.travels.count)
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Add")
                     }

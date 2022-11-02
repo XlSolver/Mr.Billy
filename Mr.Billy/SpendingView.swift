@@ -86,8 +86,8 @@ struct SpendingView: View {
                 }
                 .sheet(isPresented: $openCameraRoll) {
                     ImagePicker(selectedImage: $imageSelected,
-                            sourceType: .photoLibrary) // from photo library
-//                        sourceType: .camera) // To take picture from camera
+//                            sourceType: .photoLibrary) // from photo library
+                        sourceType: .camera) // To take picture from camera
                 }
             }
             .navigationTitle("Spending")
