@@ -14,19 +14,36 @@ struct HistoryView: View {
 //    var expenses: Expenses
     var body: some View {
         NavigationView{
-            List {
-                ForEach(myData.newspendings) { spend in
-                    HStack {
-                        Text(spend.location)
-                        Text(spend.value)
-                            .padding(.leading,50)
-                        Text(spend.category)
-                            .padding(.leading,60)
-//                        Text(dateFormatter.string(from: spend.date))
-
-                    }
+            VStack {
+                HStack(alignment: .top,spacing: 10) {
+                    Text("Date").bold()
+                        .padding(.leading)
+                    Text("Location").bold()
+                        .padding(.leading)
+                    Text("Value").bold()
+                        .padding(.leading)
+                    Text("Category").bold()
+                        .padding(.leading)
                 }
-                .onDelete(perform: delete)
+                    List {
+                        ForEach(myData.newspendings) { spend in
+                            HStack(alignment: .center, spacing: 10) {
+                                Text(spend.date,style: .date)
+                                Text(spend.location)
+                                    .padding(.leading)
+                                HStack() {
+                                    Text("€")
+                                        .padding(.leading)
+                                    Text(spend.value)
+                                        .padding(.trailing)
+                                }
+                                    Text(spend.category)
+                                        .padding(.leading)
+                                //                        Text(dateFormatter.string(from: spend.date))
+                            }
+                        }
+                        .onDelete(perform: delete)
+                    }
             }
         .navigationTitle("History")
         .toolbar {

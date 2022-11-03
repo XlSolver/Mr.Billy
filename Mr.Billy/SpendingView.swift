@@ -40,7 +40,7 @@ struct SpendingView: View {
                 DatePicker(selection: $date, in: ...Date(), displayedComponents: .date) {
                     Text("Select a date")
                 }
-//                Text("Date is \(date.formatted(date: .long, time: .omitted))")
+                //                Text("Date is \(date.formatted(date: .long, time: .omitted))")
                 Section() {
                     Picker(selection: $categoryindex,label: Text("Category")) {
                         ForEach(0 ..< categorySelection.count, id: \.self) {
@@ -59,37 +59,37 @@ struct SpendingView: View {
                         openCameraRoll = true
                         
                     }, label: {
-                        if changeImage {
-                            Image(uiImage: imageSelected)
-                                .resizable()
-                                .frame(width: 110, height: 100)
-                                .padding(.leading,100)
+                            if changeImage {
+                                Image(uiImage: imageSelected)
+                                    .resizable()
+                                    .frame(width: 110, height: 100)
+                                    .padding(.leading,100)
+                            }
+                            else {
+                                Image(systemName: "photo.fill")
+                                    .resizable()
+                                    .frame(width: 80, height: 70)
+                                    .foregroundColor(.gray)
+                                    .padding(.leading,110)
+                            }
+                        })
+                        VStack {
+                            Image(systemName: "plus")
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.white)
+                                .background(Color.gray)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            //                            .padding(.leading,110)
+                            //                        Text("Add Photo")
+                            //                            .padding(.leading,110)
+                            //                            .padding(.bottom,30)
                         }
-                        else {
-                            Image(systemName: "photo.fill")
-                                .resizable()
-                                .frame(width: 80, height: 70)
-                                .foregroundColor(.gray)
-                                .padding(.leading,110)
-                        }
-                    })
-                    VStack {
-                        Image(systemName: "plus")
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.white)
-                            .background(Color.gray)
-                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-//                            .padding(.leading,110)
-//                        Text("Add Photo")
-//                            .padding(.leading,110)
-//                            .padding(.bottom,30)
                     }
-                }
                 .sheet(isPresented: $openCameraRoll) {
-                    ImagePicker(selectedImage: $imageSelected,
-//                            sourceType: .photoLibrary) // from photo library
-                        sourceType: .camera) // To take picture from camera
-                }
+                        ImagePicker(selectedImage: $imageSelected,
+//                             sourceType: .photoLibrary)// from photo library
+                                sourceType: .camera) // To take picture from camera
+                    }
             }
             .navigationTitle("Spending")
             .toolbar {

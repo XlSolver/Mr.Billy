@@ -9,6 +9,8 @@ import SwiftUI
 struct AddTravel: View {
     @ObservedObject var myData = sharedData
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var nameTravel: String = ""
     @State var dates1 = Date()
     @State var dates2 = Date()
@@ -52,6 +54,7 @@ struct AddTravel: View {
                     Button {
                         // print(myData.travels.count)
                         addTravel(nameTravel: nameTravel, dates: dates1)
+                        presentationMode.wrappedValue.dismiss()
                         // print(myData.travels.count)
                     } label: {
                         Text("Add")

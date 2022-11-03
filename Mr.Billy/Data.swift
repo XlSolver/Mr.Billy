@@ -28,7 +28,7 @@ struct Spending: Identifiable
 class SpendingData: ObservableObject {
     @Published var newspendings =
     [
-        Spending(location: "Location",value: "Value",date: Date(),category: "Category"),
+//        Spending(location: "Location",value: "Value",date: Date(),category: "Category"),
         Spending(location: "Napoli", value: "22", date: Date(), category: "Food")
     ]
     
@@ -59,10 +59,10 @@ struct Travel : Identifiable {
 
 class SharedData: ObservableObject {
     @Published   var travels = [
-        Travel(travelName: "Outcave", datesArr: Date.now, datesDep: Date.now, address: "via Claudio, 18 con lode", budget:"10000€", imageName: "outcave"),
-        Travel(travelName: "Paris", datesArr: Date.now, datesDep: Date.now, address: "194 Jard. de l'Arche",budget:"6200€", imageName: "paris"),
-        Travel(travelName: "Madrid", datesArr: Date.now,datesDep: Date.now, address: "Corso FrancyFranKo, 90", budget:"7300€",imageName: "madrid"),
-        Travel(travelName: "London", datesArr: Date.now, datesDep: Date.now, address: "London SW1A 1AA, UK", budget:"25000£",imageName: "london")
+        Travel(travelName: "Outcave", datesArr: Date.now, datesDep: Date.now, address: "via Claudio, 18 con lode", budget:"€10000", imageName: "outcave"),
+        Travel(travelName: "Paris", datesArr: Date.now, datesDep: Date.now, address: "194 Jard. de l'Arche",budget:"€6200", imageName: "paris"),
+        Travel(travelName: "Madrid", datesArr: Date.now,datesDep: Date.now, address: "Corso FrancyFranKo, 90", budget:"€7300",imageName: "madrid"),
+        Travel(travelName: "London", datesArr: Date.now, datesDep: Date.now, address: "London SW1A 1AA, UK", budget:"£25000",imageName: "london")
         
         
     ]
