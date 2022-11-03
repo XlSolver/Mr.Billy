@@ -21,10 +21,10 @@ struct ContentView: View {
                 .tabItem() {
                     Label("My Travel", systemImage: "airplane")
                 }
-            HistoryView()
-                .tabItem() {
-                    Label("History", systemImage: "list.bullet.circle.fill")
-                }
+//            HistoryView()
+//                .tabItem() {
+//                    Label("History", systemImage: "list.bullet.circle.fill")
+//                }
         }
     }
 }
