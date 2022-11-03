@@ -19,7 +19,7 @@ struct BudgetView: View {
     @StateObject var myData = expensesStore()
     @State private var showingSheet = false
     @State var budget : Float = 100
-    @State var spesa : Float = 0
+    @State var spesa : Float = 42
     
     @State var newspendingviewispresented = false
     
@@ -70,6 +70,7 @@ struct BudgetView: View {
                                 Text("\(row.place)")
                                 Spacer()
                                 Text("-"+"\(row.howMuch)"+"€")
+                           
                             }.padding()
                             Divider()
                         }
@@ -82,12 +83,7 @@ struct BudgetView: View {
                 .toolbar {
                     ToolbarItem {
                         HStack {
-                            Button {
-                                spesa += 5
-                                print("aggiunta spesa rapida")
-                            } label: {
-                                Image(systemName: "doc.badge.plus")
-                            }
+                            
                             Button {
                                 newspendingviewispresented.toggle()
                             } label: {
