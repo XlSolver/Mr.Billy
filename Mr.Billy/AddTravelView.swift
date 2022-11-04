@@ -8,7 +8,6 @@ import SwiftUI
 
 struct AddTravel: View {
     @ObservedObject var myData = sharedData
-    
     @Environment(\.presentationMode) var presentationMode
     
     @State var nameTravel: String = ""

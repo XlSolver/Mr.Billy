@@ -9,7 +9,7 @@ import SwiftUI
 import Charts
 
 struct ContentView: View {
-    
+
     var body: some View {
         TabView{
             BudgetView()
@@ -25,15 +25,15 @@ struct ContentView: View {
 //                .tabItem() {
 //                    Label("History", systemImage: "list.bullet.circle.fill")
 //                }
-        }
+        }.tint(.pink)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    
+
     @Binding var budget: Float
     @Binding var spese: Float
-    
+
     static var previews: some View {
         ContentView()
     }

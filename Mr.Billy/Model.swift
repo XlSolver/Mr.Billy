@@ -14,7 +14,7 @@ struct Expenses: Identifiable {
 }
 
 class expensesStore: ObservableObject {
-        
+
     @Published var expenses: [Expenses] = [
         Expenses(place:"Bar Ciro", howMuch:4.20),
         Expenses(place:"Bar Veronica", howMuch:7.22),

@@ -35,9 +35,11 @@ struct TravelView: View {
                     ZStack (alignment: .center) {
                         Image(travels.imageName)
                             .resizable()
+                            .scaledToFill()
                             .opacity(0.8)
+//                            .frame(width: 300, height: 150)
                         Rectangle()
-                            .fill(LinearGradient(colors: [.clear, .black.opacity(0.2)], startPoint: .top, endPoint: .bottom)
+                           .fill(LinearGradient(colors: [.clear, .black.opacity(0.2)], startPoint: .top, endPoint: .bottom)
                             )
                         Text(travels.travelName)
                             .font(.title)
@@ -49,15 +51,17 @@ struct TravelView: View {
                         HStack{
                             Button("edit"){}
                                 .foregroundColor(.white)
+                                .tint(.blue)
                             Button("Delete"){}
                                 .foregroundColor(.white)
+                                .tint(.red)
                         }
                     }
                     .frame(width: 360, height: 120)
                     .cornerRadius(11)
                     .foregroundColor(.white)
                     .shadow(radius: 3)
-                    .padding(10)
+//                    .padding(10)
                     
                 }
                 
@@ -65,7 +69,8 @@ struct TravelView: View {
                 
                 
             }
-            
+            .scrollContentBackground(.hidden)
+//            .padding()
             
             
             .navigationTitle("Travels")
@@ -78,6 +83,7 @@ struct TravelView: View {
                         newAddTravelViewisPresented.toggle()
                     } label: {
                         Image(systemName: "plus")
+                            .tint(.pink)
                     }
                 }
             }

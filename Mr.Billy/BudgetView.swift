@@ -44,11 +44,11 @@ struct BudgetView: View {
                 
                 
                 VStack(spacing: 12){
-                    Text("Total Spent")
-                    Text("€\(spesa, specifier: "%.2f") of \(budget, specifier: "%.2f")")
-                   
+                    Text("Total Spent").bold()
+                    Text("€\(spesa, specifier: "%.2f") of \(budget, specifier: "%.2f")").font(.system(size: 20))
+                    
                 }.frame(width: 300, height: 80)
-                    .background(Color.gray)
+                    .background(Color.pink.opacity(0.8))
                     .cornerRadius(15)
                     .foregroundColor(.white)
                     .onTapGesture {
@@ -63,21 +63,21 @@ struct BudgetView: View {
                 
                 
                 
-                ScrollView{
+                ScrollView(showsIndicators: false){
                     ForEach(myData.expenses) {row in
                         VStack{
                             HStack(spacing: 10){
                                 Text("\(row.place)")
                                 Spacer()
                                 Text("-"+"\(row.howMuch)"+"€")
-                           
+                                
                             }.padding()
                             Divider()
                         }
                     }
                 }
             }.navigationTitle("Budget")
-             .sheet(isPresented: $newspendingviewispresented) {
+                .sheet(isPresented: $newspendingviewispresented) {
                     SpendingView()
                 }
                 .toolbar {
@@ -87,13 +87,22 @@ struct BudgetView: View {
                             Button {
                                 newspendingviewispresented.toggle()
                             } label: {
-                                Image(systemName: "plus")
+                                Image(systemName: "plus").foregroundColor(.pink)
                             }
                         }
                     }
                 }
         }
-        
     }
 }
 
+
+struct BudgetView_Previews: PreviewProvider {
+    
+    @Binding var budget: Float
+    @Binding var spese: Float
+    
+    static var previews: some View {
+        BudgetView()
+    }
+}
